@@ -44,8 +44,5 @@
         Else
             lblError.Text = "El email proporcionado no está registrado."
         End If
-
-
-
     End Sub
 End Class
