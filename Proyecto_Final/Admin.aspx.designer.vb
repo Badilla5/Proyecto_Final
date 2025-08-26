@@ -11,59 +11,77 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Entregas
+Partial Public Class Admin
 
     '''<summary>
-    '''Control lblNombreUsuario.
+    '''Control txtNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNombreUsuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtEmail.
+    '''Control TxtEmail.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TxtEmail As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtTitulo.
+    '''Control DdlPuestos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtTitulo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DdlPuestos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control txtDescripccion.
+    '''Control BtnActulizar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtDescripccion As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents BtnActulizar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btnEntrega.
+    '''Control BtnCancelar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnEntrega As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents BtnCancelar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control lblError.
+    '''Control LblMensaje.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LblMensaje As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control GridView1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control SqlDataSource1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

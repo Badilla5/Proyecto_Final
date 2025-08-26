@@ -3,13 +3,12 @@
     Public Property Contraseña As String
     Public Property Rol As String
     Public Property Email As String
+    Public Property IdEstudiante As Integer
+    Public Property titulo As String
+    Public Property Descripcion As String
 
     Public Sub New()
     End Sub
-
-    Public Function obtenernobrecompleto() As String
-        Return Nombre & " " & Apellido
-    End Function
 
     Public Function validarusuario() As Boolean
         Return Not String.IsNullOrEmpty(Email) AndAlso Not String.IsNullOrEmpty(Contraseña)
@@ -25,6 +24,7 @@
                 .Apellido = Convert.ToString(row("Apellido")),
                 .Email = Convert.ToString(row("Email")),
                 .Rol = Convert.ToString(row("Rol")),
+                .IdEstudiante = Convert.ToInt32(row("IdEstudiante")),
                 .Contraseña = Convert.ToString(row("Contraseña"))
             }
         End If
@@ -34,4 +34,6 @@
         Dim emailPattern As String = "^[^@\s]+@[^@\s]+\.[^@\s]+$"
         Return Regex.IsMatch(Email, emailPattern)
     End Function
+
+
 End Class
