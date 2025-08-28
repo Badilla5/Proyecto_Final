@@ -20,10 +20,10 @@
 
         </div>
         <div>
-            <asp:Button ID="BtnActulizar" CssClass="btn btn-primary" runat="server" Text="Actualizar" OnClick="BtnActulizar_Click" />
+            <asp:Button ID="BtnActulizar" CssClass="btn mb-3 btn-primary" runat="server" Text="Actualizar" OnClick="BtnActulizar_Click" />
         </div>
         <div>
-    <asp:Button ID="BtnCancelar" CssClass="btn btn-primary" runat="server" Text="Cancelar" OnClick="BtnCancelar_Click" />
+    <asp:Button ID="BtnCancelar" CssClass="btn mb-3 btn-primary" runat="server" Text="Cancelar" OnClick="BtnCancelar_Click" />
 </div>
         <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
     </div>

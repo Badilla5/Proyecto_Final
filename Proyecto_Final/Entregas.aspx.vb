@@ -24,15 +24,18 @@
         Dim Titulo As String = txtTitulo.Text
         If String.IsNullOrEmpty(Titulo) OrElse String.IsNullOrEmpty(Descripcion) Then
             lblError.Text = "Por favor, complete todos los campos."
+            lblError.Visible = True
             Return False
         End If
 
         Dim exito As Boolean = Repo.insertarEntrega(IdEstudiante, Descripcion, Titulo)
         If exito Then
             lblError.Text = "Entrega registrada con éxito."
+            lblError.Visible = True
             Return True
         Else
             lblError.Text = "Error al registrar la entrega. Inténtelo de nuevo."
+            lblError.Visible = True
             Return False
         End If
     End Function
@@ -43,6 +46,7 @@
             limpiarCampos()
         Else
             lblError.Text = "El email proporcionado no está registrado."
+            lblError.Visible = True
         End If
     End Sub
 End Class

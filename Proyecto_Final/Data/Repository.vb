@@ -125,5 +125,47 @@ Public Class Repository
             End Using
         End Using
     End Function
+    Public Function ObtenerIdProyecto(IdProyecto As String) As Integer
+        Dim query As String = "SELECT IdEstudiante FROM Proyectos WHERE Id = @IdProyecto"
+        Using conn As New SqlConnection(connectionString)
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@IdProyecto", IdProyecto)
+                Try
+                    conn.Open()
+                    Dim result = cmd.ExecuteScalar()
+                    If result IsNot Nothing Then
+                        Return Convert.ToInt32(result)
+                    Else
+                        Return -1 ' Usuario no encontrado
+                    End If
+                Catch ex As Exception
+                    ' Manejo de errores (puedes registrar el error si es necesario)
+                    Return -1
+                End Try
+            End Using
+        End Using
+    End Function
+    Public Function Insertarcomentario(IdProyecto As Integer, IdUsuario As String, Texto As String, Calificacion As Integer) As Boolean
+        Dim query As String = "INSERT INTO Comentarios (IdProyecto, IdUsuario, Texto, Calificacion) 
+                           VALUES (@IdProyecto, @IdUsuario, @Texto, @Calificacion)"
+
+        Using conn As New SqlConnection(connectionString)
+            Using cmd As New SqlCommand(query, conn)
+                Try
+                    cmd.Parameters.AddWithValue("@IdProyecto", IdProyecto)
+                    cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario)
+                    cmd.Parameters.AddWithValue("@Texto", Texto)
+                    cmd.Parameters.AddWithValue("@Calificacion", Calificacion)
+                    conn.Open()
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                    Return rowsAffected > 0
+                Catch ex As Exception
+                    ' Manejo de errores (puedes registrar el error si es necesario)
+                    Return False
+                End Try
+
+            End Using
+        End Using
+    End Function
 
 End Class

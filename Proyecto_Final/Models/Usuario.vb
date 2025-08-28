@@ -4,6 +4,7 @@
     Public Property Rol As String
     Public Property Email As String
     Public Property IdEstudiante As Integer
+    Public Property IdProyecto As Integer
     Public Property titulo As String
     Public Property Descripcion As String
 
@@ -25,6 +26,7 @@
                 .Email = Convert.ToString(row("Email")),
                 .Rol = Convert.ToString(row("Rol")),
                 .IdEstudiante = Convert.ToInt32(row("IdEstudiante")),
+                .IdProyecto = Convert.ToInt32(row("IdProyecto")),
                 .Contraseña = Convert.ToString(row("Contraseña"))
             }
         End If
