@@ -24,6 +24,6 @@
             <asp:Button CssClass="btn btn-primary w-100 py-2" ID="btnLogin" runat="server" Text="Acceder" OnClick="btnLogin_Click" />
         </main>
     </div>
-    <asp:Label ID="lblError" runat="server" Text="" CssClass="alert alert-danger" Visible="false"></asp:Label>
+    <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
 
 </asp:Content>

@@ -45,7 +45,13 @@
         txtNombre.Text = String.Empty
         TxtEmail.Text = String.Empty
         DdlPuestos.SelectedIndex = 0
+        LblMensaje.Text = String.Empty
 
+
+    End Sub
+
+    Protected Sub BtnAgregarUsuario_Click(sender As Object, e As EventArgs)
+        Response.Redirect("Registrar.aspx")
 
     End Sub
 End Class

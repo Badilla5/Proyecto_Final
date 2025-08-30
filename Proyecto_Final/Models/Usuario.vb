@@ -6,14 +6,30 @@
     Public Property IdEstudiante As Integer
     Public Property IdProyecto As Integer
     Public Property titulo As String
+    Public Property repetirContraseña As String
     Public Property Descripcion As String
 
     Public Sub New()
+        ' Constructor por defecto
+
+    End Sub
+    Public Sub New(nombre As String, email As String, contraseña As String, rol As String)
+        Me.Nombre = nombre
+        Me.Email = email
+        Me.Contraseña = contraseña
+        Me.Rol = rol
     End Sub
 
     Public Function validarusuario() As Boolean
         Return Not String.IsNullOrEmpty(Email) AndAlso Not String.IsNullOrEmpty(Contraseña)
 
+    End Function
+    Public Function validarContraseña() As Boolean
+        Return Not String.IsNullOrEmpty(Contraseña) AndAlso Contraseña.Length >= 6
+    End Function
+
+    Public Function validarNombre() As Boolean
+        Return Not String.IsNullOrEmpty(Nombre) AndAlso Nombre.Length >= 3
     End Function
 
     Public Function dtToUsuario(dataTable As DataTable) As Usuario

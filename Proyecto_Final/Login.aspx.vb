@@ -26,11 +26,11 @@
                 End If
                 Return True
             Else
-                lblError.Text = "Usuario o contraseña incorrectos."
+                LblMensaje.Text = "Usuario o contraseña incorrectos."
                 Return False
             End If
         Else
-            lblError.Text = "Por favor, ingrese un email y contraseña válidos."
+            LblMensaje.Text = "Por favor, ingrese un email y contraseña válidos."
             Return False
         End If
 

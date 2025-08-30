@@ -21,6 +21,25 @@ Public Class Repository
             End Using
         End Using
     End Function
+    Public Function insertarUsuario(nombre As String, email As String, contraseña As String, rol As String) As Boolean
+        Dim query As String = "INSERT INTO Usuarios (Nombre, Email, Contraseña, Rol) VALUES (@Nombre, @Email, @Contraseña, @Rol)"
+        Using conn As New SqlConnection(connectionString)
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@Nombre", nombre)
+                cmd.Parameters.AddWithValue("@Email", email)
+                cmd.Parameters.AddWithValue("@Contraseña", contraseña)
+                cmd.Parameters.AddWithValue("@Rol", rol)
+                Try
+                    conn.Open()
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                    Return rowsAffected > 0
+                Catch ex As Exception
+                    ' Manejo de errores (puedes registrar el error si es necesario)
+                    Return False
+                End Try
+            End Using
+        End Using
+    End Function
 
     Public Function obtenerusuario(email As String, contraseña As String) As Integer
         Dim query As String = "SELECT Id, Rol FROM Usuarios WHERE Email = @Email"
